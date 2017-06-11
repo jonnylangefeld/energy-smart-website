@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <title>energy smart</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- css -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- javascript -->
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/ScrollMagic.min.js"></script>
+    <script type="text/javascript" src="js/animation.gsap.min.js"></script>
+    <script type="text/javascript" src="js/TweenMax.min.js"></script>
+    <script type="text/javascript" src="js/TimelineMax.min.js"></script>
+	<script type="text/javascript" src="js/debug.addIndicators.js"></script>
+
+</head>
+
+<body>
+    <div class="slide" id="title">
+        <div id="title-header">
+            <div id="logo-wrapper">
+                <p id="logo-png">
+                </p>
+                <p id="logo-text">
+                    ENERGYSMART
+                </p>
+                <p id="high-voltage-sign">
+                </p>
+                <p id="drop">
+                </p>
+
+            </div>
+        </div>
+        <div class="inner">
+
+        </div>
+    </div>
+    <div class="slide" id="insurance">
+        <div class="inner">
+
+        </div>
+    </div>
+    <div class="slide" id="landlord">
+        <div class="inner">
+
+        </div>
+    </div>
+    <div class="slide" id="tenant">
+        <div class="inner">
+
+        </div>
+    </div>
+    <div class="slide" id="logo">
+        <div class="inner">
+            <div id="logo-big">
+                <object data="img/logo-white.svg" type="image/svg+xml" style="transform: translate(0px, -150px);>
+            </div>
+            <div id="slogan">
+                We make energy smart
+            </div>
+        </div>
+    </div>
+    <div id="end">
+    </div>
+    </div>
+
+
+    <script>
+        $(function() { // wait for document ready
+            // init
+            var controller = new ScrollMagic.Controller();
+            var to_y = "25%";
+            var d = "75%"
+
+            // define movement of panels
+            var hideTitle = new TimelineMax()
+                .fromTo("#title", 1, {
+                    y: "0%"
+                }, {
+                    y: to_y,
+                    opacity: 0,
+                    ease: Linear.easeNone
+                });
+
+            // create scene to pin and link animation
+            new ScrollMagic.Scene({
+                    triggerElement: "#insurance",
+                    triggerHook: "onEnter",
+                    duration: d
+                })
+                .setTween(hideTitle)
+                // .addIndicators() // add indicators (requires plugin)
+                .addTo(controller);
+
+            var hideInsurance = new TimelineMax()
+                .fromTo("#insurance", 1, {
+                    y: "0%"
+                }, {
+                    y: to_y,
+                    opacity: 0,
+                    ease: Linear.easeNone
+                });
+
+            // create scene to pin and link animation
+            new ScrollMagic.Scene({
+                    triggerElement: "#landlord",
+                    triggerHook: "onEnter",
+                    duration: d
+                })
+                .setTween(hideInsurance)
+                // .addIndicators() // add indicators (requires plugin)
+                .addTo(controller);
+
+            var hideLandlord = new TimelineMax()
+                .fromTo("#landlord", 1, {
+                    y: "0%"
+                }, {
+                    y: to_y,
+                    opacity: 0,
+                    ease: Linear.easeNone
+                });
+
+            // create scene to pin and link animation
+            new ScrollMagic.Scene({
+                    triggerElement: "#tenant",
+                    triggerHook: "onEnter",
+                    duration: d
+                })
+                .setTween(hideLandlord)
+                // .addIndicators() // add indicators (requires plugin)
+                .addTo(controller);
+
+            var hideTenant = new TimelineMax()
+                .fromTo("#tenant", 1, {
+                    y: "0%"
+                }, {
+                    y: to_y,
+                    opacity: 0,
+                    ease: Linear.easeNone
+                });
+
+            // create scene to pin and link animation
+            new ScrollMagic.Scene({
+                    triggerElement: "#logo",
+                    triggerHook: "onEnter",
+                    duration: d
+                })
+                .setTween(hideTenant)
+                // .addIndicators() // add indicators (requires plugin)
+                .addTo(controller);
+
+            var hideLogo = new TimelineMax()
+                .fromTo("#logo", 1, {
+                    y: "0%"
+                }, {
+                    y: "0%",
+                    opacity: 1,
+                    ease: Linear.easeNone
+                });
+
+            // create scene to pin and link animation
+            new ScrollMagic.Scene({
+                    triggerElement: "#end",
+                    triggerHook: "onEnter",
+                    duration: d
+                })
+                .setTween(hideLogo)
+                // .addIndicators() // add indicators (requires plugin)
+                .addTo(controller);
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,110 @@
+@font-face {
+    font-family:"Ostrich";
+    src: url("../fonts/OstrichSans-Light.otf")
+}
+
+html {
+    margin: 0px;
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    margin: 0px;
+    height: 100%;
+    width: 100%;
+}
+
+p {
+    margin: 0px;
+    display: inline-block;
+}
+
+#logo-wrapper {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    height: 100%;
+}
+
+p#logo-png {
+    background-image: url(../img/logo-white.png);
+    width: 160px;
+    height: 100%;
+    background-position: 50%;
+    background-size: 99%;
+    background-repeat: no-repeat;
+}
+
+p#logo-text {
+    margin: 0px 20px;
+    font-family:'Ostrich', light;
+    font-size: 45px;
+    color: white;
+}
+
+p#high-voltage-sign {
+    background-image: url(../img/high-voltage-sign.png);
+    height: 46px;
+    width: 29px;
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+p#drop {
+    background-image: url(../img/drop.png);
+    height: 46px;
+    width: 29px;
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+.slide {
+    height: 100%;
+    width: 100%;
+    -webkit-box-shadow: 0px 2px 160px 0px rgba(0,0,0,0.4);
+    -moz-box-shadow: 0px 2px 160px 0px rgba(0,0,0,0.4);
+    box-shadow: 0px 2px 160px 0px rgba(0,0,0,0.4);
+}
+
+.slide > .inner {
+    border: 1px solid black;
+    height: 63%;
+    width: 90%;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+}
+
+#title-header {
+    width: 100%;
+    height: 80px;
+    background-color: #536984
+}
+
+#insurance {
+    background-color: #ebf2fd
+}
+
+#landlord {
+    background-color: #fffcdf
+}
+
+#tenant {
+    background-color: #f2f2f2
+}
+
+#logo {
+    background-color: #536984
+}
+
+#logo-big {
+    width: 100%;
+    height: 100%;
+}
