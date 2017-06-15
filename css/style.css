@@ -69,7 +69,6 @@ p#drop {
 }
 
 .slide > .inner {
-    border: 1px solid black;
     height: 63%;
     width: 90%;
     margin: auto;
@@ -84,8 +83,65 @@ p#drop {
 }
 
 .row {
-    /*border: 1px solid black;*/
     text-align: center
+}
+
+.contentbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contentbox.left-to-right.left {
+    height: 100%;
+    width: 33%;
+}
+
+.contentbox.left-to-right.middle {
+    height: 100%;
+    width: 50%;
+}
+
+.contentbox.left-to-right.right {
+    height: 100%;
+    width: 17%;
+}
+
+.contentbox.right-to-left.left {
+    height: 100%;
+    width: 17%;
+}
+
+.contentbox.right-to-left.middle {
+    height: 100%;
+    width: 50%;
+}
+
+.contentbox.right-to-left.right {
+    height: 100%;
+    width: 33%;
+}
+
+.contentbox > .content {
+    max-width: 90%;
+    margin: 0px;
+    display: inline-block;
+    position: relative;
+}
+
+.highlight{
+    font-size: 150%;
+    font-weight: 600;
+}
+
+.icon {
+    width: 100%;
+    transform: scale(1.1);
+    max-width: 150px;
+}
+
+.persona {
+    max-width: 100%;
 }
 
 #title-header {
@@ -121,3 +177,36 @@ p#drop {
     width: 100%;
     height: 100%;
 }
+
+#light-bulb {
+    position: absolute;
+    top: -78%;
+    z-index: -1;
+    transform: scale(0.5);
+    max-width: 140%;
+}
+
+#consumption-invoice {
+    position: absolute;
+    top: -98%;
+    left: 15%;
+    z-index: -1;
+    transform: scale(0.5);
+    max-width: 140%;
+}
+
+/*.row {
+    border: 1px solid black;
+}
+
+.slide > .inner {
+    border: 1px solid black;
+}
+
+.contentbox {
+    border: 1px solid red;
+}
+
+.content {
+    border: 1px solid green;
+}*/

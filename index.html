@@ -51,12 +51,42 @@
     </div>
     <div class="slide" id="insurance">
         <div class="inner">
-
+            <div class="contentbox left-to-right left">
+                <div class="content">
+                    <img class="persona" src="img/insurance.svg" alt="insurance.svg">
+                    <img class="persona-icon" id="light-bulb" src="img/light-bulb.svg" alt="light-bulb.svg">
+                </div>
+            </div>
+            <div class="contentbox left-to-right middle">
+                <div class="content">
+                    <p class="highlight">Insurances</p> pay up to € 2.5 billion each year through broken pipes alone in Germany. With smart meters we are able to bring us all one step further and reduce this cost by a large percentage.
+                </div>
+            </div>
+            <div class="contentbox left-to-right right">
+                <div class="content">
+                    <img class="icon" src="img/insurance-icon.svg" alt="insurance-icon.svg">
+                </div>
+            </div>
         </div>
     </div>
     <div class="slide" id="landlord">
         <div class="inner">
-
+            <div class="contentbox right-to-left left">
+                <div class="content">
+                    <img class="icon" src="img/landlord-icon.svg" alt="landlord-icon.svg">
+                </div>
+            </div>
+            <div class="contentbox right-to-left middle">
+                <div class="content">
+                    <p class="highlight">Landlords</p> get automatic invoicing of consumption cost at the end of the year. In addition to that they are making their real estate eligible for sustainable energy subsidies.
+                </div>
+            </div>
+            <div class="contentbox right-to-left right">
+                <div class="content">
+                    <img class="persona" src="img/landlord.svg" alt="landlord.svg">
+                    <img class="persona-icon" id="consumption-invoice" src="img/consumption-invoice.png" alt="consumption-invoice">
+                </div>
+            </div>
         </div>
     </div>
     <div class="slide" id="tenant">
@@ -86,7 +116,7 @@
             var to_y = "25%";
             var d = "75%"
 
-            // define movement of panels
+            // Animation for Title
             var hideTitle = new TimelineMax()
                 .fromTo("#title", 1, {
                     y: "0%"
@@ -96,7 +126,7 @@
                     ease: Linear.easeNone
                 });
 
-            // create scene to pin and link animation
+            // Scene with trigger for title
             new ScrollMagic.Scene({
                     triggerElement: "#insurance",
                     triggerHook: "onEnter",
@@ -106,6 +136,7 @@
                 // .addIndicators() // add indicators (requires plugin)
                 .addTo(controller);
 
+            // Animation for insurance
             var hideInsurance = new TimelineMax()
                 .fromTo("#insurance", 1, {
                     y: "0%"
@@ -115,7 +146,7 @@
                     ease: Linear.easeNone
                 });
 
-            // create scene to pin and link animation
+            // Scene with trigger for insurance
             new ScrollMagic.Scene({
                     triggerElement: "#landlord",
                     triggerHook: "onEnter",
@@ -125,6 +156,7 @@
                 // .addIndicators() // add indicators (requires plugin)
                 .addTo(controller);
 
+            // Animation for landlord
             var hideLandlord = new TimelineMax()
                 .fromTo("#landlord", 1, {
                     y: "0%"
@@ -134,7 +166,7 @@
                     ease: Linear.easeNone
                 });
 
-            // create scene to pin and link animation
+            // Scene with trigger for landlord
             new ScrollMagic.Scene({
                     triggerElement: "#tenant",
                     triggerHook: "onEnter",
@@ -144,6 +176,7 @@
                 // .addIndicators() // add indicators (requires plugin)
                 .addTo(controller);
 
+            // Animation for tenant
             var hideTenant = new TimelineMax()
                 .fromTo("#tenant", 1, {
                     y: "0%"
@@ -153,7 +186,7 @@
                     ease: Linear.easeNone
                 });
 
-            // create scene to pin and link animation
+            // Scene with trigger for tenant
             new ScrollMagic.Scene({
                     triggerElement: "#logo",
                     triggerHook: "onEnter",
@@ -163,6 +196,7 @@
                 // .addIndicators() // add indicators (requires plugin)
                 .addTo(controller);
 
+            // Animation for logo
             var hideLogo = new TimelineMax()
                 .fromTo("#logo", 1, {
                     y: "0%"
@@ -172,13 +206,117 @@
                     ease: Linear.easeNone
                 });
 
-            // create scene to pin and link animation
+            // Scene with trigger for logo
             new ScrollMagic.Scene({
                     triggerElement: "#end",
                     triggerHook: "onEnter",
                     duration: d
                 })
                 .setTween(hideLogo)
+                // .addIndicators() // add indicators (requires plugin)
+                .addTo(controller);
+
+            // Animation for Elements on insurance slide
+            var animateInsuranceIcon = new TimelineMax()
+                .fromTo(".slide#insurance > .inner > .contentbox.right > .content", 1, {
+                    left: "100",
+                    opacity: 0
+                }, {
+                    left: "0",
+                    opacity: 1,
+                    ease: Sine.easeIn
+                },0)
+                .fromTo(".slide#insurance > .inner > .contentbox.middle > .content", 1, {
+                    bottom: "100",
+                    opacity: 0
+                }, {
+                    bottom: "0",
+                    opacity: 1,
+                    ease: Sine.easeIn
+                },0)
+                .fromTo(".slide#insurance > .inner > .contentbox.middle > .content > .highlight", 1, {
+                    transform: "scale(2.5)"
+                }, {
+                    transform: "scale(1)",
+                    ease: Sine.easeIn
+                },0)
+                .fromTo(".slide#insurance > .inner > .contentbox.left > .content", 1, {
+                    right: "100",
+                    opacity: 0
+                }, {
+                    right: "0",
+                    opacity: 1,
+                    ease: Sine.easeIn
+                },0)
+                .fromTo(".slide#insurance > .inner > .contentbox.left > .content > #light-bulb", 1, {
+                    top: "-110%",
+                    opacity: 0
+                }, {
+                    top: "-78%",
+                    opacity: 1,
+                    ease: Sine.easeIn
+                },0);
+
+            // Scene with trigger for elements on insurance slide
+            new ScrollMagic.Scene({
+                    triggerElement: ".slide#insurance > .inner",
+                    triggerHook: "onEnter",
+                    duration: "40%",
+                    offset: "100px"
+                })
+                .setTween(animateInsuranceIcon)
+                // .addIndicators() // add indicators (requires plugin)
+                .addTo(controller);
+
+            // Animation for Elements on landlord slide
+            var animateInsuranceIcon = new TimelineMax()
+                .fromTo(".slide#landlord > .inner > .contentbox.left > .content", 1, {
+                    right: "100",
+                    opacity: 0
+                }, {
+                    right: "0",
+                    opacity: 1,
+                    ease: Sine.easeIn
+                },0)
+                .fromTo(".slide#landlord > .inner > .contentbox.middle > .content", 1, {
+                    bottom: "100",
+                    opacity: 0
+                }, {
+                    bottom: "0",
+                    opacity: 1,
+                    ease: Sine.easeIn
+                },0)
+                .fromTo(".slide#landlord > .inner > .contentbox.middle > .content > .highlight", 1, {
+                    transform: "scale(2.5)"
+                }, {
+                    transform: "scale(1)",
+                    ease: Sine.easeIn
+                },0)
+                .fromTo(".slide#landlord > .inner > .contentbox.right > .content", 1, {
+                    left: "100",
+                    opacity: 0
+                }, {
+                    left: "0",
+                    opacity: 1,
+                    ease: Sine.easeIn
+                },0)
+                .fromTo(".slide#landlord > .inner > .contentbox.right > .content > #consumption-invoice", 1, {
+                    top: "-130%",
+                    opacity: 0
+                }, {
+                    top: "-98%",
+                    opacity: 1,
+                    ease: Sine.easeIn
+                },0);
+
+            // Scene with trigger for elements on landlord slide
+            new ScrollMagic.Scene({
+                    triggerElement: ".slide#landlord > .inner",
+                    triggerHook: "onEnter",
+                    duration: "40%",
+                    offset: "100px"
+                })
+                .setTween(animateInsuranceIcon)
                 // .addIndicators() // add indicators (requires plugin)
                 .addTo(controller);
         });
