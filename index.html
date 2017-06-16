@@ -18,7 +18,23 @@
     <script type="text/javascript" src="js/animation.gsap.min.js"></script>
     <script type="text/javascript" src="js/TweenMax.min.js"></script>
     <script type="text/javascript" src="js/TimelineMax.min.js"></script>
-	<script type="text/javascript" src="js/debug.addIndicators.js"></script>
+    <script type="text/javascript" src="js/debug.addIndicators.js"></script>
+    <script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-50617617-3', 'auto');
+        ga('send', 'pageview');
+    </script>
 
 </head>
 
@@ -283,7 +299,7 @@
                     left: "0",
                     opacity: 1,
                     ease: Sine.easeIn
-                },0)
+                }, 0)
                 .fromTo(".slide#insurance > .inner > .contentbox.middle > .content", 1, {
                     bottom: "100",
                     opacity: 0
@@ -291,13 +307,13 @@
                     bottom: "0",
                     opacity: 1,
                     ease: Sine.easeIn
-                },0)
+                }, 0)
                 .fromTo(".slide#insurance > .inner > .contentbox.middle > .content > .highlight", 1, {
                     transform: "scale(2.5)"
                 }, {
                     transform: "scale(1)",
                     ease: Sine.easeIn
-                },0)
+                }, 0)
                 .fromTo(".slide#insurance > .inner > .contentbox.left > .content", 1, {
                     right: "100",
                     opacity: 0
@@ -305,7 +321,7 @@
                     right: "0",
                     opacity: 1,
                     ease: Sine.easeIn
-                },0)
+                }, 0)
                 .fromTo(".slide#insurance > .inner > .contentbox.left > .content > #light-bulb", 1, {
                     top: "-110%",
                     left: "100%",
@@ -315,7 +331,7 @@
                     left: "14%",
                     opacity: 1,
                     ease: Sine.easeIn
-                },0);
+                }, 0);
 
             // Scene with trigger for elements on insurance slide
             new ScrollMagic.Scene({
@@ -337,7 +353,7 @@
                     right: "0",
                     opacity: 1,
                     ease: Sine.easeIn
-                },0)
+                }, 0)
                 .fromTo(".slide#landlord > .inner > .contentbox.middle > .content", 1, {
                     bottom: "100",
                     opacity: 0
@@ -345,13 +361,13 @@
                     bottom: "0",
                     opacity: 1,
                     ease: Sine.easeIn
-                },0)
+                }, 0)
                 .fromTo(".slide#landlord > .inner > .contentbox.middle > .content > .highlight", 1, {
                     transform: "scale(2.5)"
                 }, {
                     transform: "scale(1)",
                     ease: Sine.easeIn
-                },0)
+                }, 0)
                 .fromTo(".slide#landlord > .inner > .contentbox.right > .content", 1, {
                     left: "100",
                     opacity: 0
@@ -359,7 +375,7 @@
                     left: "0",
                     opacity: 1,
                     ease: Sine.easeIn
-                },0)
+                }, 0)
                 .fromTo(".slide#landlord > .inner > .contentbox.right > .content > #consumption-invoice", 1, {
                     top: "-130%",
                     opacity: 0
@@ -367,7 +383,7 @@
                     top: "-98%",
                     opacity: 1,
                     ease: Sine.easeIn
-                },0);
+                }, 0);
 
             // Scene with trigger for elements on landlord slide
             new ScrollMagic.Scene({
@@ -389,7 +405,7 @@
                     left: "0",
                     opacity: 1,
                     ease: Sine.easeIn
-                },0)
+                }, 0)
                 .fromTo(".slide#tenant > .inner > .contentbox.middle > .content", 1, {
                     bottom: "100",
                     opacity: 0
@@ -397,13 +413,13 @@
                     bottom: "0",
                     opacity: 1,
                     ease: Sine.easeIn
-                },0)
+                }, 0)
                 .fromTo(".slide#tenant > .inner > .contentbox.middle > .content > .highlight", 1, {
                     transform: "scale(2.5)"
                 }, {
                     transform: "scale(1)",
                     ease: Sine.easeIn
-                },0)
+                }, 0)
                 .fromTo(".slide#tenant > .inner > .contentbox.left > .content", 1, {
                     right: "100",
                     opacity: 0
@@ -411,7 +427,7 @@
                     right: "0",
                     opacity: 1,
                     ease: Sine.easeIn
-                },0)
+                }, 0)
                 .fromTo(".slide#tenant > .inner > .contentbox.left > .content > #dashboard-card-2", 1, { //blue
                     top: "-80%",
                     opacity: 0
@@ -419,7 +435,7 @@
                     top: "-54%",
                     opacity: 1,
                     ease: Sine.easeIn
-                },0)
+                }, 0)
                 .fromTo(".slide#tenant > .inner > .contentbox.left > .content > #dashboard-card-1", 1, { //red
                     top: "-60%",
                     left: "30%",
@@ -429,7 +445,7 @@
                     left: "15%",
                     opacity: 1,
                     ease: Sine.easeIn
-                },0);
+                }, 0);
 
             // Scene with trigger for elements on tenant slide
             new ScrollMagic.Scene({
@@ -446,48 +462,48 @@
             var animateLogo = new TimelineMax()
                 .fromTo("#text-corner-lines-top-svg", 1, {
                     opacity: 0,
-                    x:100
+                    x: 100
                 }, {
                     opacity: 1,
-                    x:0,
+                    x: 0,
                     ease: Sine.easeIn
-                },0)
+                }, 0)
                 .fromTo("#text-single-line-text-svg", 1, {
                     opacity: 0,
-                    x:-100
+                    x: -100
                 }, {
                     opacity: 1,
-                    x:0,
+                    x: 0,
                     ease: Sine.easeIn
-                },0)
+                }, 0)
                 .fromTo("#text-established-text-svg", 1, {
                     opacity: 0,
-                    x:100
+                    x: 100
                 }, {
                     opacity: 1,
-                    x:0,
+                    x: 0,
                     ease: Sine.easeIn
-                },0)
+                }, 0)
                 .fromTo("#outline-diamond-svg", 1, {
                     opacity: 0,
-                    scale:2,
-                    transformOrigin:"center center"
+                    scale: 2,
+                    transformOrigin: "center center"
                 }, {
                     opacity: 1,
-                    scale:1,
-                    transformOrigin:"center center",
+                    scale: 1,
+                    transformOrigin: "center center",
                     ease: Sine.easeIn
-                },0)
+                }, 0)
                 .fromTo("#outline-solid-svg", 1, {
                     opacity: 0,
-                    scale:1.5,
-                    transformOrigin:"center center"
+                    scale: 1.5,
+                    transformOrigin: "center center"
                 }, {
                     opacity: 1,
-                    scale:1,
-                    transformOrigin:"center center",
+                    scale: 1,
+                    transformOrigin: "center center",
                     ease: Sine.easeIn
-                },0);
+                }, 0);
 
             // Scene with trigger for elements on logo slide
             new ScrollMagic.Scene({
@@ -504,12 +520,12 @@
             var animateSlogan = new TimelineMax()
                 .fromTo("#slogan", 1, {
                     opacity: 0,
-                    "letter-spacing":"10px"
+                    "letter-spacing": "10px"
                 }, {
                     opacity: 1,
-                    "letter-spacing":"0px",
+                    "letter-spacing": "0px",
                     ease: Sine.easeInOut
-                },0);
+                }, 0);
 
             // Scene with trigger to animate slogan
             new ScrollMagic.Scene({
