@@ -34,6 +34,7 @@ body {
     margin: 0px;
     height: 100%;
     width: 100%;
+    overflow-x: hidden;
 }
 
 p {
@@ -193,7 +194,6 @@ p#drop {
 #video {
     width: 750px;
     height: 422px;
-    transform: scale(0.9);
     box-shadow: 12px 12px 17px #8295bd;
 }
 
@@ -295,6 +295,13 @@ svg:not(:root) {
     }
 }
 
+@media screen and (max-width: 650px) {
+    #video {
+        width: 600px;
+        height: 338px;
+    }
+}
+
 @media screen and (max-width: 600px) {
     #video {
         width: 550px;
@@ -310,6 +317,13 @@ svg:not(:root) {
     }
     #slogan {
         font-size: 36px
+    }
+}
+
+@media screen and (max-width: 550px) {
+    #video {
+        width: 500px;
+        height: 281px;
     }
 }
 
@@ -338,15 +352,22 @@ svg:not(:root) {
     }
 }
 
+@media screen and (max-width: 550px) {
+    #video {
+        width: 400px;
+        height: 225px;
+    }
+}
+
 @media screen and (max-width: 400px) {
     #video {
-        width: 350px;
-        height: 197px;
+        width: 320px;
+        height: 180px;
     }
     #header-text {
-        font-size: 30px;
+        font-size: 26px;
         max-width: 369px;
-        padding: 0px 0px;
+        padding: 20px 0px;
     }
     p#logo-text {
         font-size: 30px;
@@ -361,6 +382,13 @@ svg:not(:root) {
     }
     #slogan {
         font-size: 26px
+    }
+}
+
+@media screen and (max-width: 320px) {
+    #video {
+        width: 300px;
+        height: 169px;
     }
 }
 
