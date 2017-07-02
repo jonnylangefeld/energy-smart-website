@@ -51,6 +51,9 @@
             </p>
             <p id="drop">
             </p>
+            <div id="e-mail">
+                <a href="mailto:hello@energy-smart.de">hello@energy-smart.de</a>
+            </div>
 
         </div>
     </div>
@@ -175,6 +178,14 @@
                     <td>
                         <div id="slogan">
                             We make energy smart
+                        </div>
+                    </td>
+                </tr>
+                <tr id="contact-triger"></tr>
+                <tr>
+                    <td>
+                        <div id="contact">
+                            Contact us at <a href="mailto:hello@energy-smart.de">hello@energy-smart.de</a>
                         </div>
                     </td>
                 </tr>
@@ -532,6 +543,27 @@
             // Scene with trigger to animate slogan
             new ScrollMagic.Scene({
                     triggerElement: "#slogan-triger",
+                    triggerHook: "onEnter",
+                    duration: "10%"
+                })
+                .setTween(animateSlogan)
+                // .addIndicators() // add indicators (requires plugin)
+                .addTo(controller);
+
+            // animate contact
+            var animateSlogan = new TimelineMax()
+                .fromTo("#contact", 1, {
+                    opacity: 0,
+                    "transform": "scale(2.5)"
+                }, {
+                    opacity: 1,
+                    "transform": "scale(1)",
+                    ease: Sine.easeInOut
+                }, 0);
+
+            // Scene with trigger to animate slogan
+            new ScrollMagic.Scene({
+                    triggerElement: "#contact-triger",
                     triggerHook: "onEnter",
                     duration: "10%"
                 })

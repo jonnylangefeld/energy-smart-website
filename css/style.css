@@ -283,6 +283,19 @@ p#drop {
     display: inline-block;
 }
 
+#contact {
+    width: 100%;
+    font-size: 16px;
+    font-weight: bold;
+    color: rgb(50, 61, 74);
+    text-shadow: 1px 1px 0px #7290AC;
+    display: inline-block;
+}
+
+#contact > a {
+    color: rgb(255, 255, 255);
+}
+
 svg:not(:root) {
     overflow: visible;
 }
