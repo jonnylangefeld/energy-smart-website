@@ -63,6 +63,7 @@ p#logo-png {
 }
 
 #contact-top {
+    display: none
     width: 100%;
     text-align: right;
     padding: 0px 15px;
