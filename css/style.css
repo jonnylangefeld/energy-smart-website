@@ -389,6 +389,10 @@ p#drop {
     max-width: 140%;
 }
 
+.team-member {
+    width: 95%;
+}
+
 #logo-big {
     height: 510px;
     width: 612px;
