@@ -247,11 +247,29 @@ p#drop {
     width: 33%;
 }
 
+.col3 {
+    width: 33%;
+    height: 100%;
+    border: 1px solid black;
+}
+
 .contentbox > .content {
     max-width: 90%;
     margin: 0px;
     display: inline-block;
     position: relative;
+}
+
+.contentbox.head {
+    width: 100%;
+    display: block;
+}
+
+.contentbox-content {
+    width: 100%;
+    display: flex;
+    position: absolute;
+    bottom: 0px;
 }
 
 .highlight{
@@ -322,6 +340,14 @@ p#drop {
 
 #tenant {
     background-image: radial-gradient(rgb(242, 242, 242),rgb(218, 218, 218));
+}
+
+#team {
+    background-image: radial-gradient(rgb(242, 242, 242),rgb(218, 218, 218));
+}
+
+#team > .inner {
+    display: block;
 }
 
 #logo {
