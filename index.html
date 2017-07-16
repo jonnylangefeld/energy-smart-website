@@ -336,11 +336,31 @@
 
             // Scene with trigger for tenant
             new ScrollMagic.Scene({
-                    triggerElement: "#logo",
+                    triggerElement: "#team",
                     triggerHook: "onEnter",
                     duration: d
                 })
                 .setTween(hideTenant)
+                // .addIndicators() // add indicators (requires plugin)
+                .addTo(controller);
+
+            // Animation for team
+            var hideTeam = new TimelineMax()
+                .fromTo("#team", 1, {
+                    y: "0%"
+                }, {
+                    y: to_y,
+                    opacity: 0,
+                    ease: Linear.easeNone
+                });
+
+            // Scene with trigger for team
+            new ScrollMagic.Scene({
+                    triggerElement: "#logo",
+                    triggerHook: "onEnter",
+                    duration: d
+                })
+                .setTween(hideTeam)
                 // .addIndicators() // add indicators (requires plugin)
                 .addTo(controller);
 
