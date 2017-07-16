@@ -231,6 +231,10 @@
             var to_y = "25%";
             var d = "75%"
 
+            $('.contentbox-content').css({
+                top:$('.contentbox.head').height()
+            })
+
             $('.arrow').click(function(event){
                 console.log($('#title').height());
                 $('body').animate({
@@ -651,6 +655,12 @@
                 .setTween(animateSlogan)
                 // .addIndicators() // add indicators (requires plugin)
                 .addTo(controller);
+        });
+
+        $( window ).resize(function() {
+            $('.contentbox-content').css({
+                top:$('.contentbox.head').height()
+            })
         });
     </script>
 </body>
