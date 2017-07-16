@@ -206,6 +206,39 @@
             var to_y = "25%";
             var d = "75%"
 
+            $('.arrow').click(function(event){
+                console.log($('#title').height());
+                $('body').animate({
+                    scrollTop:$('#title').height()
+                },1000);
+            });
+
+            // Animation arrow
+            var hideArrow = new TimelineMax()
+                .fromTo(".arrow", 1, {
+                    opacity: 1
+                }, {
+                    opacity: 0,
+                    ease: Linear.easeNone
+                })
+                .to(".arrow",1,{
+                    "-webkit-animation-name": "fade",
+                    "-moz-animation-name": "fade",
+                    "-o-animation-name": "fade",
+                    "animation-name": "fade",
+                });
+
+            // Scene with trigger for title
+            new ScrollMagic.Scene({
+                    triggerElement: "#insurance",
+                    triggerHook: "onEnter",
+                    duration: "10%",
+                    reverse: false
+                })
+                .setTween(hideArrow)
+                // .addIndicators() // add indicators (requires plugin)
+                .addTo(controller);
+
             // Animation for Title
             var hideTitle = new TimelineMax()
                 .fromTo("#title", 1, {
