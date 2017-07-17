@@ -604,6 +604,50 @@
                 // .addIndicators() // add indicators (requires plugin)
                 .addTo(controller);
 
+            // Animation for Elements on team slide
+            var animateTeamIcon = new TimelineMax()
+                .fromTo(".slide#team > .inner > .contentbox.head", 1, {
+                    left: "100",
+                    opacity: 0
+                }, {
+                    left: "0",
+                    opacity: 1,
+                    ease: Sine.easeIn
+                }, 0)
+                .fromTo(".slide#team > .inner > .contentbox.head > .highlight", 1, {
+                    transform: "scale(2.5)"
+                }, {
+                    transform: "scale(1)",
+                    ease: Sine.easeIn
+                }, 0)
+                .fromTo(".team-member", 1, {
+                    transform: "scale(0)",
+                    opacity: 0
+                }, {
+                    transform: "scale(1)",
+                    opacity: 1,
+                    ease: Sine.easeIn
+                }, 0)
+                .fromTo(".team-container", 1, {
+                    top: "500",
+                    opacity: 0
+                }, {
+                    top: "0",
+                    opacity: 1,
+                    ease: Sine.easeIn
+                }, 0);
+
+            // Scene with trigger for elements on team slide
+            new ScrollMagic.Scene({
+                    triggerElement: ".slide#team > .inner",
+                    triggerHook: "onEnter",
+                    duration: "40%",
+                    offset: "100px"
+                })
+                .setTween(animateTeamIcon)
+                // .addIndicators() // add indicators (requires plugin)
+                .addTo(controller);
+
             // Animation for elements on logo slide
             var animateLogo = new TimelineMax()
                 .fromTo("#text-corner-lines-top-svg", 1, {
