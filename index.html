@@ -139,6 +139,79 @@
             </div>
         </div>
     </div>
+    <div class="slide" id="team">
+        <div class="inner">
+            <div class="contentbox head">
+                <p class="highlight">
+                    The Team
+                </p>
+                <br />
+                We are a crew of highly ambitious individuals with complimentary skills which add up to a smart team full of energy.
+            </div>
+            <div class="contentbox-content">
+                <div class="contentbox col3">
+                    <div class="content">
+                        <div class="card">
+                            <img class="team-member" src="img/jonny.png" alt="jonny">
+                            <div class="team-container">
+                                <h3>Jonny</h3>
+                                <p class="team-title">CIO &amp; Co-founder</p>
+                                <div class="desc">
+                                    <li>
+                                        Data Science, Machine Learning, Micro Service Platforms
+                                    </li>
+                                    <li>
+                                        Software / Platform Management
+                                    </li>
+                                </div>
+                                <p class="team-mail"><a href="mailto:jonny@energy-smart.de">jonny@energy-smart.de</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contentbox col3">
+                    <div class="content">
+                        <div class="card">
+                            <img class="team-member" src="img/alex.png" alt="alex">
+                            <div class="team-container">
+                                <h3>Alex</h3>
+                                <p class="team-title">CTO &amp; Co-founder</p>
+                                <div class="desc">
+                                    <li>
+                                        Data Science, Internet of Things, Electrical Engineering
+                                    </li>
+                                    <li>
+                                        Hardware Development
+                                    </li>
+                                </div>
+                                <p class="team-mail"><a href="mailto:alex@energy-smart.de">alex@energy-smart.de</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contentbox col3">
+                    <div class="content">
+                        <div class="card">
+                            <img class="team-member" src="img/mathias.png" alt="mathias">
+                            <div class="team-container">
+                                <h3>Mathias</h3>
+                                <p class="team-title">CBDO</p>
+                                <div class="desc">
+                                    <li>
+                                        Finances, Controlling, Investor Relations, Admin Operations
+                                    </li>
+                                    <li>
+                                        14 Years of Experience in Finance for IT
+                                    </li>
+                                </div>
+                                <p class="team-mail"><a href="mailto:mathias@energy-smart.de">mathias@energy-smart.de</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="slide" id="logo">
         <div class="inner">
             <table>
@@ -205,6 +278,10 @@
             var controller = new ScrollMagic.Controller();
             var to_y = "25%";
             var d = "75%"
+
+            $('.contentbox-content').css({
+                top:$('.contentbox.head').height()
+            })
 
             $('.arrow').click(function(event){
                 console.log($('#title').height());
@@ -311,11 +388,31 @@
 
             // Scene with trigger for tenant
             new ScrollMagic.Scene({
-                    triggerElement: "#logo",
+                    triggerElement: "#team",
                     triggerHook: "onEnter",
                     duration: d
                 })
                 .setTween(hideTenant)
+                // .addIndicators() // add indicators (requires plugin)
+                .addTo(controller);
+
+            // Animation for team
+            var hideTeam = new TimelineMax()
+                .fromTo("#team", 1, {
+                    y: "0%"
+                }, {
+                    y: to_y,
+                    opacity: 0,
+                    ease: Linear.easeNone
+                });
+
+            // Scene with trigger for team
+            new ScrollMagic.Scene({
+                    triggerElement: "#logo",
+                    triggerHook: "onEnter",
+                    duration: d
+                })
+                .setTween(hideTeam)
                 // .addIndicators() // add indicators (requires plugin)
                 .addTo(controller);
 
@@ -507,6 +604,50 @@
                 // .addIndicators() // add indicators (requires plugin)
                 .addTo(controller);
 
+            // Animation for Elements on team slide
+            var animateTeamIcon = new TimelineMax()
+                .fromTo(".slide#team > .inner > .contentbox.head", 1, {
+                    left: "100",
+                    opacity: 0
+                }, {
+                    left: "0",
+                    opacity: 1,
+                    ease: Sine.easeIn
+                }, 0)
+                .fromTo(".slide#team > .inner > .contentbox.head > .highlight", 1, {
+                    transform: "scale(2.5)"
+                }, {
+                    transform: "scale(1)",
+                    ease: Sine.easeIn
+                }, 0)
+                .fromTo(".team-member", 1, {
+                    transform: "scale(0)",
+                    opacity: 0
+                }, {
+                    transform: "scale(1)",
+                    opacity: 1,
+                    ease: Sine.easeIn
+                }, 0)
+                .fromTo(".team-container", 1, {
+                    top: "500",
+                    opacity: 0
+                }, {
+                    top: "0",
+                    opacity: 1,
+                    ease: Sine.easeIn
+                }, 0);
+
+            // Scene with trigger for elements on team slide
+            new ScrollMagic.Scene({
+                    triggerElement: ".slide#team > .inner",
+                    triggerHook: "onEnter",
+                    duration: "40%",
+                    offset: "100px"
+                })
+                .setTween(animateTeamIcon)
+                // .addIndicators() // add indicators (requires plugin)
+                .addTo(controller);
+
             // Animation for elements on logo slide
             var animateLogo = new TimelineMax()
                 .fromTo("#text-corner-lines-top-svg", 1, {
@@ -606,6 +747,12 @@
                 .setTween(animateSlogan)
                 // .addIndicators() // add indicators (requires plugin)
                 .addTo(controller);
+        });
+
+        $( window ).resize(function() {
+            $('.contentbox-content').css({
+                top:$('.contentbox.head').height()
+            })
         });
     </script>
 </body>
