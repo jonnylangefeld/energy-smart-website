@@ -296,60 +296,6 @@ p#drop {
     z-index: 1;
 }
 
-#impressum {
-    width: 80%;
-    height: 80%;
-    position: fixed;
-    z-index: 3;
-    margin: 10%;
-}
-
-.impressum-background {
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    z-index: 3;
-    background-color: rgba(0, 0, 0, 0.7);
-    display: none;
-}
-
-.panel-body {
-    overflow-y: scroll;
-    height: 92%;
-}
-
-#impressum-activator {
-    margin-right: 17px;
-    font-size: 14px;
-    color: white;
-    cursor: pointer;
-}
-
-#impressumclose{
-    float: right;
-    margin-top: 9%;
-    margin-right: 9%;
-    cursor: pointer;
-    color: #fff;
-    border: 1px solid #AEAEAE;
-    border-radius: 30px;
-    background: #605F61;
-    font-size: 36px;
-    font-weight: bold;
-    display: inline-block;
-    line-height: 0px;
-    padding: 11px 3px;
-    width: 30px;
-    height: 30px;
-    z-index: 76;
-    position: relative;
-}
-
-#impressumclose:before {
-    content: "×";
-
-}
-
 #header-text {
     text-align: center;
     font-size: 44px;
